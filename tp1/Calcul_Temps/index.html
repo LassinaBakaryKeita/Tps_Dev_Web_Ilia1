@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul-Temps</title>
+    <script src="script.js" defer></script>
+    <style>
+        input[type="reset"],
+        input[type="button"]{
+            border-radius: 10px;
+            padding: 5px;
+            width: 100px;
+            height: auto;
+            background-color: cyan;
+            font-weight: 700;
+        }
+
+        input[type="reset"]:hover,
+        input[type="button"]:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <p>Entrez le premier temps:</p>
+        <label for="heure1">Heure(s)</label>
+        <input type="number" name="heure1" id="heure1" min="0" max="20000" value="0">
+
+        <label for="minute1">Minute(s)</label>
+        <input type="number" name="minute1 " id="minute1" min="0" max="20000" value="0">
+
+        <label for="seconde1">Seconde(s)</label>
+        <input type="number" name="seconde1 " id="seconde1" min="0" max="20000" value="0">
+
+
+        <p>Entrez le deuxième temps:</p>
+        <label for="heure2">Heure(s)</label>
+        <input type="number" name="heure2 " id="heure2" min="0" max="20000" value="0">
+
+        <label for="minute2">Minute(s)</label>
+        <input type="number" name="minute2 " id="minute2" min="0" max="20000" value="0">
+
+        <label for="seconde2">Seconde(s)</label>
+        <input type="number" name="seconde2" id="seconde2" min="0" max="20000" value="0">
+
+        <p>Entrez le troisième temps:</p>
+        <label for="heure3">Heure(s)</label>
+        <input type="number" name="heure3" id="heure3" min="0" max="20000" value="0">
+
+        <label for="minute3">Minute(s)</label>
+        <input type="number" name="minute3" id="minute3" min="0" max="20000" value="0">
+
+        <label for="seconde3">Seconde(s)</label>
+        <input type="number" name="seconde3" id="seconde3" min="0" max="20000" value="0">
+
+        <p>Total des 3 temps:</p>
+        <label for="jour">Jour(s)</label>
+        <input type="number" name="jour" id="jour" min="0" max="20000" value="0">
+
+        <label for="TotalHeure">Heure(s)</label>
+        <input type="number" name="TotalHeure" id="TotalHeure" min="0" max="20000" value="0">
+
+        <label for="TotalMinute">Minute(s)</label>
+        <input type="number" name="TotalMinute" id="TotalMinute" min="0" max="20000" value="0">
+
+        <label for="TotalSeconde">Seconde(s)</label>
+        <input type="number" name="TotalSeconde" id="TotalSeconde" min="0" max="20000" value="0">
+
+        
+        <br> <br> <input type="reset" id="">
+        <input type="button" id="btnCalculSomme" value="Somme">
+    </form>
+    
+</body>
+
+
+</html>

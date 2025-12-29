@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM</title>
+    <script src="script.js" defer></script>
+
+    <!--Partie CSS pour les 3 boutons-->
+    <style> 
+      
+        input[type="reset"],
+        input[type="button"]{
+            border-radius: 10px;
+            padding: 5px;
+            width: 155px;
+            height: auto;
+            background-color: cyan;
+            font-weight: 700;
+        }
+
+        input[type="reset"]:hover,
+        input[type="button"]:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Le titre de la page-->
+    <h2 style="text-align: center;">Questionnaire sous forme QCM</h2> 
+
+    
+    <form>  
+        <!-- Question 1-->
+        <div class="question1">
+            <p>Question 1: En HTML, quelles balises sont utilisées pour structurer le contenu d’une page web ?</p> 
+            <input type="checkbox" name="question1-proposition1" id="question1-proposition1" value="header"> 
+            <label for="question1-proposition1">header</label> <br>
+
+            <input type="checkbox" name="question1-proposition2" id="question1-proposition2" value="div"> 
+            <label for="question1-proposition2">div</label> <br>
+
+            <input type="checkbox" name="question1-proposition3" id="question1-proposition3" value="button"> 
+            <label for="question1-proposition3">button</label>
+        </div>
+        
+
+        <!-- Question 2-->
+        <div class="question2">
+            <p>Question 2: En CSS, quelles propriétés peuvent être utilisées pour centrer un texte ?</p>
+            <input type="checkbox" name="question2-proposition1" id="question2-proposition1" value="text-align"> 
+            <label for="question2-proposition1">text-align</label> <br>
+
+            <input type="checkbox" name="question2-proposition2" id="question2-proposition2" value="justify-content"> 
+            <label for="question2-proposition2">justify-content</label> <br>
+
+            <input type="checkbox" name="question2-proposition3" id="question2-proposition3" value="align-items"> 
+            <label for="question2-proposition3">align-items</label>
+        </div>
+        
+
+        <!-- Question 3-->
+        <div class="question3">
+             <p>Question 3: En JavaScript, quelles instructions permettent de déclarer une variable ?</p> 
+            <input type="checkbox" name="question3-proposition1" id="question3-proposition1" value="let"> 
+            <label for="question3-proposition1">let </label> <br>
+
+            <input type="checkbox" name="question3-proposition2" id="question3-proposition2" value="var"> 
+            <label for="question3-proposition2">var</label> <br>
+
+            <input type="checkbox" name="question3-proposition3" id="question3-proposition3" value="set"> 
+            <label for="question3-proposition3">set </label>
+        </div>
+        
+
+        <!-- Question 4-->
+        <div class="question4">
+            <p>Question 4: Quelle balise HTML est utilisée pour insérer une image ?</p> 
+            
+            <input type="radio" name="question4" id="question4-proposition1" value="img"> 
+            <label for="question4-proposition1">img</label> <br>
+
+            <input type="radio" name="question4" id="question4-proposition2" value="image"> 
+            <label for="question4-proposition2">image</label> <br>
+
+            <input type="radio" name="question4" id="question4-proposition3" value="picture" checked> 
+            <label for="question4-proposition3">picture</label> 
+
+        </div>
+
+        <!-- Question 5-->
+        <div class="question5">
+            <p>Question 5: En CSS, quelle unité est relative à la taille de la police du parent ?</p> 
+            
+            <input type="radio" name="question5" id="question5-proposition1" value="px"> 
+            <label for="question5-proposition1">px</label> <br>
+
+            <input type="radio" name="question5" id="question5-proposition2" value="em"> 
+            <label for="question5-proposition2">em</label> <br>
+
+            <input type="radio" name="question5" id="question5-proposition3" valiue="%" checked> 
+            <label for="question5-proposition3">%</label>  <br> <br>
+        
+        </div>
+        
+        <!--Les boutons-->
+        <input type="reset" value="Initialiser">
+        <input type="button" value="Vérifier mes réponses" id="btnCorrection" >
+        <input type="button" value="Voir le corrigé complet" id="btnResultat">
+
+           
+    </form>
+
+</body>
+</html>
+
+
+    
