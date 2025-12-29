@@ -1,0 +1,181 @@
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .conteneur-principal {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .zone-principale {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Zones de drop */
+        .zone-drop {
+            min-height: 350px;
+            border: 3px dashed #ccc;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .zone-drop h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        /* Effet lors du survol avec un élément */
+        .zone-drop.survol {
+            background: #e3f2fd;
+            border-color: #667eea;
+            border-style: solid;
+            transform: scale(1.02);
+        }
+
+        /* Zone source */
+        .zone-source {
+            background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
+        }
+
+        /* Zone cible */
+        .zone-cible {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe6e6 100%);
+            border-color: #ff9800;
+        }
+
+        /* Éléments déplaçables */
+        .element-deplacable {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            cursor: move;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .element-deplacable:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(67, 233, 123, 0.5);
+        }
+
+        /* Élément en cours de déplacement */
+        .element-deplacable.en-deplacement {
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+
+        /* Statistiques */
+        .statistiques {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .stat-valeur {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        /* Bouton de réinitialisation */
+        .bouton-reset {
+            display: block;
+            margin: 30px auto 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            font-weight: 600;
+        }
+
+        .bouton-reset:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        /* Message vide */
+        .message-vide {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        /* Animation d'apparition */
+        @keyframes apparition {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .element-deplacable {
+            animation: apparition 0.3s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .zone-principale {
+                grid-template-columns: 1fr;
+            }
+        }

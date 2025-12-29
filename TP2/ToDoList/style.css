@@ -1,0 +1,124 @@
+/* Style global */
+/* Réinitialisation des marges et padding par défaut et utilisation de box-sizing border-box pour faciliter le dimensionnement */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style de base pour le corps de la page */
+body {
+  font-family: Arial, sans-serif; 
+  padding: 20px; 
+  background: #f4f4f9; 
+  color: #333; 
+}
+
+/* Style de l'en-tête */
+header {
+  text-align: center; 
+  margin-bottom: 20px;
+}
+
+/* Style du titre principal */
+h1 {
+  color: #2a9d8f; 
+}
+
+/* Style de la section d'ajout de tâches */
+.ajout {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 20px; 
+}
+
+/* Style du champ de saisie */
+.ajout input {
+  width: 60%; 
+  padding: 10px; 
+  border: 2px solid #2a9d8f; 
+  border-radius: 5px; 
+  font-size: 16px; 
+}
+
+/* Style du bouton d'ajout */
+.ajout button {
+  margin-left: 10px; 
+  padding: 10px 15px; 
+  border: none; 
+  background: #2a9d8f; 
+  color: white; 
+  font-weight: bold;
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+/* Style du bouton au survol */
+.ajout button:hover {
+  background: #21867a; 
+}
+
+/* Style de la liste de tâches */
+.liste ul {
+  list-style: none; /* Suppression des puces de liste */
+}
+
+/* Style de chaque élément de la liste */
+.liste li {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background: white; 
+  margin: 5px 0; 
+  padding: 10px; 
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
+}
+
+/* Style d'une tâche marquée comme faite */
+.liste li.fait {
+  text-decoration: line-through; /* Texte barré */
+  color: gray; /* Texte grisé */
+}
+
+/* Style des boutons d'action (faire/supprimer) */
+.liste button {
+  margin-left: 5px; 
+  padding: 5px 10px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 14px; 
+}
+
+/* Style spécifique du bouton "Faire" */
+.liste button.faire {
+  background: #f4a261; 
+  color: white; 
+}
+
+/* Style spécifique du bouton "Supprimer" */
+.liste button.supprimer {
+  background: #e76f51; 
+  color: black; 
+}
+
+/* Style des boutons au survol */
+.liste button:hover {
+  opacity: 0.8; 
+}
+
+/* Style de la section de résumé */
+.resume {
+  margin-top: 20px; 
+  text-align: center;
+}
+
+/* Style du message de félicitations final */
+#messageFinal {
+  margin-top: 15px; 
+  font-size: 18px; 
+  font-weight: bold; 
+  color: #2a9d8f; 
+}
+

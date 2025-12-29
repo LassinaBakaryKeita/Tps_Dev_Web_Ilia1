@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrage de tableau</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="conteneur">
+        <h1> Liste de Produits</h1>
+        <p class="sous-titre">Recherchez parmi nos produits</p>
+        
+        <!-- Zone de recherche -->
+        <div class="zone-recherche">
+            <input 
+                type="text" 
+                class="champ-recherche" 
+                id="champRecherche" 
+                placeholder="Rechercher un produit..."
+            >
+        </div>
+
+        <!-- Liste des produits -->
+        <div class="liste-produits" id="listeProduits">
+            <div class="element-produit" data-nom="ordinateur portable">Ordinateur Portable</div>
+            <div class="element-produit" data-nom="smartphone">Smartphone</div>
+            <div class="element-produit" data-nom="casque audio">Casque Audio</div>
+            <div class="element-produit" data-nom="écran led">Écran LED</div>
+            <div class="element-produit" data-nom="clavier mécanique">Clavier Mécanique</div>
+            <div class="element-produit" data-nom="souris sans fil">Souris Sans Fil</div>
+            <div class="element-produit" data-nom="tablette graphique">Tablette Graphique</div>
+            <div class="element-produit" data-nom="webcam hd">Webcam HD</div>
+            <div class="element-produit" data-nom="enceinte bluetooth">Enceinte Bluetooth</div>
+            <div class="element-produit" data-nom="disque dur externe">Disque Dur Externe</div>
+        </div>
+
+        <!-- Message si aucun résultat -->
+        <div class="message-vide" id="messageVide">
+            🔍 Aucun produit trouvé
+        </div>
+
+        <!-- Statistiques -->
+        <div class="statistiques">
+            <div class="stat-item">
+                <div class="stat-label">Total produits</div>
+                <div class="stat-valeur" id="statTotal">10</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Affichés</div>
+                <div class="stat-valeur" id="statAffiches">10</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Cachés</div>
+                <div class="stat-valeur" id="statCaches">0</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

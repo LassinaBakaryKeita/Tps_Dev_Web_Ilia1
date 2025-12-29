@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="conteneur-principal">
+        <h1> Drag and Drop </h1>
+        
+        <div class="zone-principale">
+            <!-- Zone source avec les éléments à déplacer -->
+            <div class="zone-drop zone-source" id="zoneSource">
+                <h2>📦 À déplacer</h2>
+                <div class="element-deplacable" draggable="true" data-id="1">
+                    Élément 1
+                </div>
+                <div class="element-deplacable" draggable="true" data-id="2">
+                    Élément 2
+                </div>
+                <div class="element-deplacable" draggable="true" data-id="3">
+                    Élément 3
+                </div>
+            </div>
+
+            <!-- Zone cible où déposer les éléments -->
+            <div class="zone-drop zone-cible" id="zoneCible">
+                <h2>🎯 Déposer ici</h2>
+                <div class="message-vide" id="messageVide">
+                    Glissez les éléments ici
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistiques -->
+        <div class="statistiques">
+            <div class="stat-item">
+                <div class="stat-label">Éléments sources</div>
+                <div class="stat-valeur" id="statSource">3</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Éléments déposés</div>
+                <div class="stat-valeur" id="statCible">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Total déplacements</div>
+                <div class="stat-valeur" id="statDeplacements">0</div>
+            </div>
+        </div>
+
+        <!-- Bouton de réinitialisation -->
+        <button class="bouton-reset" id="boutonReset">
+             Réinitialiser
+        </button>
+    </div>
+
+</body>
+</html>

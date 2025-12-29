@@ -1,0 +1,254 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .conteneur-principal {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .description {
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Bouton d'ouverture */
+        .bouton-ouvrir {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bouton-ouvrir:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .bouton-ouvrir:active {
+            transform: translateY(-1px);
+        }
+
+        /* 
+           MODALE (OVERLAY + CONTENU)
+         */
+        
+        /* Fond sombre derrière la modale */
+        .modale-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Modale visible */
+        .modale-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Contenu de la modale */
+        .modale-contenu {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transform: scale(0.7);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .modale-overlay.active .modale-contenu {
+            transform: scale(1);
+        }
+
+        /* En-tête de la modale */
+        .modale-entete {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .modale-titre {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Bouton X pour fermer */
+        .bouton-fermer-x {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .bouton-fermer-x:hover {
+            background: #f0f0f0;
+            color: #333;
+            transform: rotate(90deg);
+        }
+
+        /* Corps de la modale */
+        .modale-corps {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .modale-corps p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .notification-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+            margin: 20px 0;
+        }
+
+        .notification-info strong {
+            color: #1976d2;
+        }
+
+        /* Pied de la modale */
+        .modale-pied {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        .bouton-fermer,
+        .bouton-action {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bouton-fermer {
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        .bouton-fermer:hover {
+            background: #d0d0d0;
+            transform: translateY(-2px);
+        }
+
+        .bouton-action {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);
+        }
+
+        .bouton-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(67, 233, 123, 0.4);
+        }
+
+        /* Statistiques */
+        .statistiques {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .stat-valeur {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        /* Animation de pulsation */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .bouton-ouvrir.pulse {
+            animation: pulse 2s infinite;
+        }

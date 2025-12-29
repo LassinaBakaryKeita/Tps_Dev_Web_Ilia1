@@ -1,0 +1,214 @@
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .conteneur-principal {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* En-tête */
+        .en-tete {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .info-taille {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .badge-taille {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 0 5px;
+        }
+
+        /* Grille de boîtes */
+        .grille-boites {
+            display: grid;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* Layout selon la taille d'écran */
+        .grille-boites.mobile {
+            grid-template-columns: 1fr;
+        }
+
+        .grille-boites.tablette {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grille-boites.desktop {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Boîtes */
+        .boite {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .boite:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Barre latérale */
+        .barre-laterale {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .barre-laterale h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .menu-item {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #333;
+        }
+
+        .menu-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding-left: 30px;
+        }
+
+        /* Masquer la barre latérale sur mobile */
+        .barre-laterale.cache {
+            display: none;
+        }
+
+        /* Bouton pour afficher/masquer */
+        .bouton-toggle {
+            display: none;
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .bouton-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Afficher le bouton sur mobile */
+        .bouton-toggle.affiche {
+            display: block;
+        }
+
+        /* Tableau des informations */
+        .tableau-info {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .tableau-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tableau-info th,
+        .tableau-info td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .tableau-info th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .tableau-info tr:hover {
+            background: #f8f9fa;
+        }
+
+        /* Indicateur visuel */
+        .indicateur-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+            color: #667eea;
+            z-index: 1000;
+        }
+
+        /* Animation */
+        @keyframes apparition {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .boite {
+            animation: apparition 0.3s ease;
+        }

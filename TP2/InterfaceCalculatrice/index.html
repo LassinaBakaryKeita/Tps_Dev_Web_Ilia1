@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface-Calculatrice</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <form>
+        <div class="conteneur1">
+            <div >
+              <label for="nombre1">Entrez le premier nombre:</label>
+               <input type="number" id="nombre1" min="-150" max="150" value="0"> 
+            </div>
+        
+            <div >
+                <label for="nombre2">Entrez le deuxième nombre:</label>
+                <input type="number" id="nombre2" min="-150" max="150" value="0">
+            </div>
+        </div>
+
+        <div class="conteneur2">
+            <input type="button" id="addition" value="+">
+            <input type="button" id="soustraction" value="-">
+            <input type="button" id="multiplication" value="*">
+            <input type="button" id="division" value="/">
+        </div>
+
+        <div class="conteneur3">
+            <p>Résultat</p>
+            <span class="conteneur4" id="ZoneResultat">0</span>
+        </div>
+        
+        
+    </form>
+</body>
+</html>

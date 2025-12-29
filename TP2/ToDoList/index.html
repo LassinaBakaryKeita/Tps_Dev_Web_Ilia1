@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestionnaire de tâches</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <!-- En-tête de la page -->
+  <header>
+    <h1>Ma liste de tâches</h1>
+  </header>
+
+  <!-- Contenu principal de l'application -->
+  <main>
+    <!-- Section pour ajouter de nouvelles tâches -->
+    <section class="ajout">
+      <!-- Champ de saisie pour écrire une nouvelle tâche -->
+      <input type="text" id="inputTache" placeholder="Écrire une nouvelle tâche">
+      <!-- Bouton pour ajouter la tâche à la liste -->
+      <button id="btnAjouter">Ajouter</button>
+    </section>
+
+    <!-- Section qui contiendra la liste des tâches -->
+    <section class="liste">
+      <!-- Liste non ordonnée où les tâches seront affichées -->
+      <ul id="listeTaches">
+        <!-- Les tâches ajoutées apparaîtront ici dynamiquement via JavaScript -->
+      </ul>
+    </section>
+
+    <!-- Section de résumé avec les statistiques des tâches -->
+    <section class="resume">
+      <!-- Affichage du nombre total de tâches -->
+      <p>Total : <span id="total">0</span></p>
+      <!-- Affichage du nombre de tâches marquées comme faites -->
+      <p>Faite(s) : <span id="faites">0</span></p>
+      <!-- Affichage du nombre de tâches restantes à faire -->
+      <p>Restante(s) : <span id="restantes">0</span></p>
+      <!-- Zone pour afficher un message de félicitations quand toutes les tâches sont complétées -->
+      <div id="messageFinal"></div>
+    </section>
+  </main>
+</body>
+</html>
+

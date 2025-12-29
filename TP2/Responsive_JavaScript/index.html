@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Responsive avec JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Indicateur du mode actuel -->
+    <div class="indicateur-mode" id="indicateurMode">
+        💻 Mode Desktop
+    </div>
+
+    <div class="conteneur-principal">
+        <!-- En-tête -->
+        <div class="en-tete">
+            <h1>📱 Page Responsive avec JavaScript</h1>
+            <p>Redimensionnez votre fenêtre pour voir les changements !</p>
+            <div class="info-taille" id="infoTaille">
+                Largeur : <span class="badge-taille" id="largeurEcran">0</span>px
+                | Mode : <span class="badge-taille" id="modeAffichage">Desktop</span>
+            </div>
+        </div>
+
+        <!-- Bouton pour afficher/masquer le menu (visible sur mobile) -->
+        <button class="bouton-toggle" id="boutonToggle">
+            📋 Afficher le menu
+        </button>
+
+        <!-- Grille de boîtes -->
+        <div class="grille-boites desktop" id="grilleBoites">
+            <div class="boite">Boîte 1</div>
+            <div class="boite">Boîte 2</div>
+            <div class="boite">Boîte 3</div>
+            <div class="boite">Boîte 4</div>
+        </div>
+
+        <!-- Barre latérale -->
+        <div class="barre-laterale" id="barreLaterale">
+            <h2>📋 Menu de navigation</h2>
+            <div class="menu-item">🏠 Accueil</div>
+            <div class="menu-item">📊 Statistiques</div>
+            <div class="menu-item">⚙️ Paramètres</div>
+            <div class="menu-item">💬 Contact</div>
+            <div class="menu-item">ℹ️ À propos</div>
+        </div>
+
+        <!-- Tableau d'informations -->
+        <div class="tableau-info">
+            <h2 style="margin-bottom: 20px; color: #333;">📊 Informations sur le viewport</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Propriété</th>
+                        <th>Valeur</th>
+                    </tr>
+                </thead>
+                <tbody id="corpsTableau">
+                    <!-- Sera rempli dynamiquement -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

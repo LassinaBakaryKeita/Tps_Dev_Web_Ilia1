@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal de notification</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="conteneur-principal">
+        <h1>Modal de Notification</h1>
+        <p class="description">
+            Cliquez sur le bouton ci-dessous pour ouvrir une modale de notification.
+            Vous pouvez la fermer en cliquant sur le bouton "Fermer", sur le X, ou en cliquant en dehors de la modale.
+        </p>
+
+        <!-- Bouton pour ouvrir la modale -->
+        <button class="bouton-ouvrir" id="boutonOuvrir">
+             Ouvrir la Notification
+        </button>
+
+        <!-- Statistiques -->
+        <div class="statistiques">
+            <div class="stat-item">
+                <div class="stat-label">Ouvertures</div>
+                <div class="stat-valeur" id="statOuvertures">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Fermetures</div>
+                <div class="stat-valeur" id="statFermetures">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Actions</div>
+                <div class="stat-valeur" id="statActions">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+         MODALE
+    -->
+    <div class="modale-overlay" id="modaleOverlay">
+        <div class="modale-contenu" id="modaleContenu">
+            <!-- En-tête -->
+            <div class="modale-entete">
+                <h2 class="modale-titre">
+                    Nouvelle Notification
+                </h2>
+                <button class="bouton-fermer-x" id="boutonFermerX">
+                    ×
+                </button>
+            </div>
+
+            <!-- Corps -->
+            <div class="modale-corps">
+                <p>
+                    Bienvenue dans cette modale de notification ! Ce type d'interface est très utile pour attirer l'attention de l'utilisateur sur des informations importantes.
+                </p>
+                
+                <div class="notification-info">
+                    <strong>Information importante :</strong><br>
+                    Cette modale peut être personnalisée pour afficher n'importe quel contenu : notifications, confirmations, formulaires, images, etc.
+                </div>
+
+                <p>
+                    Les modales sont largement utilisées dans les applications modernes pour améliorer l'expérience utilisateur sans quitter la page actuelle.
+                </p>
+            </div>
+
+            <!-- Pied avec boutons -->
+            <div class="modale-pied">
+                <button class="bouton-fermer" id="boutonFermer">
+                    Fermer
+                </button>
+                <button class="bouton-action" id="boutonAction">
+                    Compris !
+                </button>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+</html>

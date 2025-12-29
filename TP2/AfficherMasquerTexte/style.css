@@ -1,0 +1,30 @@
+body{
+   background-color:darkkhaki;
+
+}
+
+#centrerbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+button{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: cyan;
+}
+
+#texte{
+    text-align: center;
+}
+
+
+
+button:hover{
+    cursor: pointer;
+}
+

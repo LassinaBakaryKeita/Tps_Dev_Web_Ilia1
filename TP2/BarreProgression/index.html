@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barre de progression animée</title>
+
+    <style>
+        /*  RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* BODY */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f5f9;
+            font-family: Arial, sans-serif;
+        }
+
+        /*  CONTENEUR */
+        .conteneur {
+            width: 400px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* BARRE DE PROGRESSION */
+        .barre {
+            width: 100%;
+            height: 25px;
+            background-color: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .progression {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            border-radius: 20px;
+            transition: width 0.2s linear;
+        }
+
+        /* TEXTE POURCENTAGE  */
+        .pourcentage {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* BOUTON */
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            background-color: #3b82f6;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="conteneur">
+        <h2>Barre de progression</h2>
+
+        <!-- Barre -->
+        <div class="barre">
+            <div class="progression" id="progression"></div>
+        </div>
+
+        <!-- Pourcentage -->
+        <div class="pourcentage" id="pourcentage">0%</div>
+
+        <!-- Bouton -->
+        <button id="btnDemarrer">Démarrer</button>
+    </div>
+
+    <script>
+        const progression = document.getElementById("progression");
+        const pourcentage = document.getElementById("pourcentage");
+        const bouton = document.getElementById("btnDemarrer");
+
+        let valeur = 0;
+        let interval = null;
+
+        bouton.addEventListener("click", () => {
+            // Réinitialisation
+            valeur = 0;
+            progression.style.width = "0%";
+            pourcentage.textContent = "0%";
+
+            // Empêche plusieurs clics simultanés
+            if (interval) clearInterval(interval);
+
+            // Animation progressive
+            interval = setInterval(() => {
+                if (valeur >= 100) {
+                    clearInterval(interval);
+                } else {
+                    valeur++;
+                    progression.style.width = valeur + "%";
+                    pourcentage.textContent = valeur + "%";
+                }
+            }, 250);
+        });
+    </script>
+
+</body>
+</html>

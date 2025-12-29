@@ -1,0 +1,49 @@
+.conteneur1{
+     margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+}
+
+.conteneur2{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+}
+
+ 
+input[type="button"]{
+    font-size: 1.5em;
+    border-radius: 10px;
+    padding: 5px;
+    width: 75px;
+    height: 75px;
+    background-color: cyan;
+    font-weight: 700;
+}
+
+        
+input[type="button"]:hover{
+    cursor: pointer;
+}    
+
+.conteneur3{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.conteneur4{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 155px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

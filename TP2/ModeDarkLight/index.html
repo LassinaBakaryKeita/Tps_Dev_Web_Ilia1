@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thème Clair / Sombre</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* BODY  */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            transition: background 0.4s, color 0.4s;
+        }
+
+        /*  THÈME CLAIR  */
+        body.theme-clair {
+            background-color: #e3f2fd;
+            color: #333;
+        }
+
+        /* THÈME SOMBRE  */
+        body.theme-sombre {
+            background-color: #1a1a1a;
+            color: #eee;
+        }
+
+        /* CONTENEUR */
+        .conteneur {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            text-align: center;
+            transition: background 0.4s;
+        }
+
+        body.theme-sombre .conteneur {
+            background: #2c2c2c;
+        }
+
+        /* BOUTON */
+        #boutonTheme {
+            margin: 20px 0;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        body.theme-clair #boutonTheme {
+            background-color: #333;
+            color: white;
+        }
+
+        body.theme-sombre #boutonTheme {
+            background-color: #f093fb;
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="theme-clair">
+
+    <div class="conteneur">
+        <h1>Basculer le thème</h1>
+
+        <!-- Bouton clair / sombre -->
+        <button id="boutonTheme">
+            <span id="iconeTheme">🌙</span>
+            <span id="texteTheme">Activer le thème sombre</span>
+        </button>
+
+        <!-- Information sur le thème actuel -->
+        <p>
+            Thème actuel : <strong id="nomTheme">Clair</strong>
+        </p>
+    </div>
+
+    <script>
+        // Récupération des éléments
+        const body = document.body;
+        const boutonTheme = document.getElementById("boutonTheme");
+        const iconeTheme = document.getElementById("iconeTheme");
+        const texteTheme = document.getElementById("texteTheme");
+        const nomTheme = document.getElementById("nomTheme");
+
+        // Charger le thème sauvegardé
+        const themeSauvegarde = localStorage.getItem("theme");
+        if (themeSauvegarde) {
+            appliquerTheme(themeSauvegarde);
+        }
+
+        // Appliquer un thème
+        function appliquerTheme(theme) {
+            if (theme === "sombre") {
+                body.className = "theme-sombre";
+                iconeTheme.textContent = "☀️";
+                texteTheme.textContent = "Activer le thème clair";
+                nomTheme.textContent = "Sombre";
+            } else {
+                body.className = "theme-clair";
+                iconeTheme.textContent = "🌙";
+                texteTheme.textContent = "Activer le thème sombre";
+                nomTheme.textContent = "Clair";
+            }
+        }
+
+        // Bascule au clic
+        boutonTheme.addEventListener("click", () => {
+            const nouveauTheme = body.classList.contains("theme-clair")
+                ? "sombre"
+                : "clair";
+
+            appliquerTheme(nouveauTheme);
+            localStorage.setItem("theme", nouveauTheme);
+        });
+    </script>
+
+</body>
+</html>

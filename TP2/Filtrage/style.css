@@ -1,0 +1,160 @@
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .conteneur {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .sous-titre {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        /* Zone de recherche */
+        .zone-recherche {
+            margin-bottom: 30px;
+        }
+
+        .champ-recherche {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .champ-recherche:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            background: white;
+        }
+
+        /* Liste de produits */
+        .liste-produits {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .element-produit {
+            padding: 18px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .element-produit:last-child {
+            border-bottom: none;
+        }
+
+        .element-produit:hover {
+            background: #f8f9fa;
+            padding-left: 30px;
+            color: #667eea;
+        }
+
+        /* Produit caché lors du filtrage */
+        .element-produit.cache {
+            display: none;
+        }
+
+        /* Message aucun résultat */
+        .message-vide {
+            padding: 40px 20px;
+            text-align: center;
+            color: #999;
+            font-size: 1.1rem;
+            display: none;
+        }
+
+        .message-vide.affiche {
+            display: block;
+        }
+
+        /* Statistiques */
+        .statistiques {
+            margin-top: 20px;
+            padding: 20px;
+            background: #e3f2fd;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .stat-valeur {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        /* Badge de compteur */
+        .badge-compteur {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        /* Animation d'apparition */
+        @keyframes apparition {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .element-produit {
+            animation: apparition 0.3s ease;
+        }

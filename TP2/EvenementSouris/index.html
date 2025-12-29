@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Événements de souris</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .conteneur {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 60px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .zone-boites {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Style pour les boîtes interactives */
+        .boite {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            user-select: none;
+        }
+
+        /* Première boîte - bleue */
+        .boite-bleue {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Deuxième boîte - rouge */
+        .boite-rouge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        /* Effet au survol */
+        .boite:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Classe pour le changement de couleur */
+        .couleur-changee {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%) !important;
+        }
+
+        /* Informations */
+        .info {
+            margin-top: 40px;
+            padding: 25px;
+            background: #e3f2fd;
+            border-radius: 15px;
+            text-align: center;
+            color: #1976d2;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .info strong {
+            color: #0d47a1;
+        }
+
+        /* Compteur d'événements */
+        .compteur {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .compteur-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .compteur-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .compteur-valeur {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteneur">
+        <h1> Événements de souris</h1>
+        
+        <!-- Zone contenant les deux boîtes -->
+        <div class="zone-boites">
+            <!-- Première boîte interactive -->
+            <div class="boite boite-bleue" id="boite1">
+                Passez la souris ici
+            </div>
+            
+            <!-- Deuxième boîte interactive -->
+            <div class="boite boite-rouge" id="boite2">
+                Passez la souris ici
+            </div>
+        </div>
+
+        <!-- Informations pour l'utilisateur -->
+        <div class="info">
+            <strong>Instructions :</strong> Passez votre souris sur les boîtes pour les voir changer de couleur en vert. 
+            Quand vous retirez la souris, elles retrouvent leur couleur d'origine !
+        </div>
+
+        <!-- Compteur d'interactions -->
+        <div class="compteur">
+            <div class="compteur-item">
+                <div class="compteur-label">Survols boîte 1</div>
+                <div class="compteur-valeur" id="compteurBoite1">0</div>
+            </div>
+            <div class="compteur-item">
+                <div class="compteur-label">Survols boîte 2</div>
+                <div class="compteur-valeur" id="compteurBoite2">0</div>
+            </div>
+            <div class="compteur-item">
+                <div class="compteur-label">Total</div>
+                <div class="compteur-valeur" id="compteurTotal">0</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        // DÉCLARATION DES VARIABLES
+        
+        // Récupération des éléments HTML
+        const boiteUn = document.getElementById('boite1');
+        const boiteDeux = document.getElementById('boite2');
+        const affichageCompteurBoite1 = document.getElementById('compteurBoite1');
+        const affichageCompteurBoite2 = document.getElementById('compteurBoite2');
+        const affichageCompteurTotal = document.getElementById('compteurTotal');
+        
+        // Variables pour compter les survols
+        let nombreSurvolsBoite1 = 0;
+        let nombreSurvolsBoite2 = 0;
+        
+        
+       
+        // FONCTION POUR METTRE À JOUR LES COMPTEURS
+       
+        function mettreAJourCompteurs() {
+            // Calcul du total
+            const totalSurvols = nombreSurvolsBoite1 + nombreSurvolsBoite2;
+            
+            // Mise à jour de l'affichage
+            affichageCompteurBoite1.textContent = nombreSurvolsBoite1;
+            affichageCompteurBoite2.textContent = nombreSurvolsBoite2;
+            affichageCompteurTotal.textContent = totalSurvols;
+        }
+        
+        
+      
+        // ÉVÉNEMENTS POUR LA PREMIÈRE BOÎTE
+          
+        // Quand la souris ENTRE dans la boîte 1
+        boiteUn.addEventListener('mouseenter', function() {
+            // Ajouter la classe pour changer la couleur en vert
+            boiteUn.classList.add('couleur-changee');
+            
+            // Incrémenter le compteur
+            nombreSurvolsBoite1++;
+            mettreAJourCompteurs();
+            
+        });
+        
+        // Quand la souris SORT de la boîte 1
+        boiteUn.addEventListener('mouseleave', function() {
+            // Retirer la classe pour revenir à la couleur d'origine
+            boiteUn.classList.remove('couleur-changee');
+            
+            // Message dans la console
+            console.log('Souris sortie de la boîte 1');
+        });
+        
+        
+   
+        // ÉVÉNEMENTS POUR LA DEUXIÈME BOÎTE
+        
+        // Quand la souris ENTRE dans la boîte 2
+        boiteDeux.addEventListener('mouseenter', function() {
+            // Ajouter la classe pour changer la couleur en vert
+            boiteDeux.classList.add('couleur-changee');
+            
+            // Incrémenter le compteur
+            nombreSurvolsBoite2++;
+            mettreAJourCompteurs();
+            
+        });
+        
+        // Quand la souris SORT de la boîte 2
+        boiteDeux.addEventListener('mouseleave', function() {
+            // Retirer la classe pour revenir à la couleur d'origine
+            boiteDeux.classList.remove('couleur-changee');
+            
+        });
+        
+        
+   
+        // ÉVÉNEMENT BONUS : CLIC SUR LES BOÎTES
+       
+        
+        // Clic sur la boîte 1
+        boiteUn.addEventListener('click', function() {
+            alert('Vous avez cliqué sur la boîte bleue !');
+        });
+        
+        // Clic sur la boîte 2
+        boiteDeux.addEventListener('click', function() {
+            alert('Vous avez cliqué sur la boîte rouge !');
+        });
+    </script>
+</body>
+</html>

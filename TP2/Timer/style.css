@@ -1,0 +1,22 @@
+body{ 
+    margin: 0;
+    box-sizing: border-box;
+    background-color: cadetblue;
+    /* Utilisation de Flexbox pour centrer le bloc */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.conteneur-temps{
+    background-color: aqua;
+    height: 100px;
+    width: 300px;
+    border-radius: 10px;
+    /* Centrage du texte à l’intérieur du bloc */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

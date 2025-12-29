@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Deroulant</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Menu déroulant animé</h1>
+        
+        <div class="menu-container">
+            <div class="menu-title" id="menuTitle">
+                <span>Sélectionnez une option</span>
+                <span class="arrow" id="arrow">▼</span>
+            </div>
+            
+            <div class="menu-content" id="menuContent">
+                <div class="menu-item" data-value="accueil">Accueil</div>
+                <div class="menu-item" data-value="services">Services</div>
+                <div class="menu-item" data-value="portfolio">Portfolio</div>
+                <div class="menu-item" data-value="apropos">À propos</div>
+                <div class="menu-item" data-value="contact">Contact</div>
+            </div>
+        </div>
+
+        <div class="selected-info" id="selectedInfo">
+            Vous avez sélectionné : <strong id="selectedText"></strong>
+        </div>
+
+        <div class="info">
+            Cliquez sur le titre du menu pour l'ouvrir ou le fermer
+        </div>
+    </div>
+
+</body>
+</html>
