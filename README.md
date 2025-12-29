@@ -12,6 +12,21 @@
 
 ---
 
+## Exercice Trier-Tableau
+Avec 2 méthodes ( methode par affichage dans la page et methode par affichage via la console )
+<img width="1544" height="536" alt="image" src="https://github.com/user-attachments/assets/1c1f9746-7a0a-40bc-8f92-1da77293e728" />
+
+---
+
+
+## Exercice Verification-Email
+<img width="1027" height="157" alt="image" src="https://github.com/user-attachments/assets/6263167a-e644-4232-ae7d-b1c634d0ff3c" />
+<img width="1020" height="173" alt="image" src="https://github.com/user-attachments/assets/13167dae-e4e4-4ffb-94c0-f11141297e48" />
+
+
+
+# TP2
+
 
 
 
