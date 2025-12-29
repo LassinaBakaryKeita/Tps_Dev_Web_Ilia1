@@ -31,6 +31,8 @@ Avec 2 méthodes ( methode par affichage dans la page et methode par affichage v
 <img width="1051" height="325" alt="image" src="https://github.com/user-attachments/assets/0124efc2-0191-4c69-97a4-fe8ccb1472c0" />
 
 Après avoir cliqué, on aura
+
+
 <img width="919" height="303" alt="image" src="https://github.com/user-attachments/assets/831187bb-6e75-4c2a-8150-ffda22b49a67" />
 
 ---
